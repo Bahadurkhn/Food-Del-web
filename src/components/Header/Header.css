@@ -1,14 +1,14 @@
-.header{
+.header {
     height: 34vw;
-    margin:30px auto;
-    background: url("/headers.png")  no-repeat;
-    background-size: contain;
-    background-size: 1100px;
+    margin: 30px auto;
+    background: url("/headers.png") no-repeat;
+    background-size: cover; /* Fixed size issue */
+    background-position: center;
     position: relative;
 }
 
-.header-contents{
-    position:absolute;
+.header-contents {
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -19,44 +19,59 @@
     animation: fadeIn 3s;
 }
 
-.header-contents h2{
+.header-contents h2 {
     font-weight: 500;
     color: white;
-    font-size: max(4.5vw,20px);
+    font-size: max(4.5vw, 20px);
 }
 
-.header-contents span{
+.header-contents span {
     color: black;
     font-size: 1.4vw;
     font-weight: 600;
 }
 
-.header-contents button{
+.header-contents button {
     border: none;
     color: #747474;
     font-weight: 500;
     padding: 1vw 2.3vw;
     background-color: white;
-    font-size: max(1vw,13px);
+    font-size: max(1vw, 13px);
     border-radius: 50px;
 }
-@media (max-width:1050px){
-   
-    .header-contents{
-        max-width: 45px;
-    }
-}
-@media (max-width:750px){
-  
-    .header-contents{
-        max-width: 65px;
-    }
-}
-.header-contents p{
-    display: none;
-    
 
-.header-contents button{
-    padding: 2vw 4vw;
-} 
+/* 📱 Mobile Responsive Fixes */
+@media (max-width: 1050px) {
+    .header-contents {
+        max-width: 80%; /* Fixed width */
+    }
+}
+
+@media (max-width: 750px) {
+    .header-contents {
+        max-width: 90%;
+        left: 4vw;
+        bottom: 5%;
+        gap: 3vw;
+        text-align: center;
+        align-items: center;
+    }
+
+    .header-contents h2 {
+        font-size: max(5vw, 18px);
+    }
+
+    .header-contents span {
+        font-size: 3vw;
+    }
+
+    .header-contents button {
+        padding: 2vw 6vw; /* Adjust button size */
+    }
+}
+
+/* Hide extra text for small screens */
+.header-contents p {
+    display: none;
 }
